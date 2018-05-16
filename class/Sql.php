@@ -13,20 +13,20 @@ class Sql extends PDO {
 	}
 
 	// Foreach em todos os parâmetros necessários
-	private function setParams($statment, $parameters = array()) {
+	private function setParams($statement, $parameters = array()) {
 
 		foreach ($parameters as $key => $value) {
 			
-			$stmt -> bindParam($key, $value);
+			$this -> setParam($statement, $key, $value);
 
 		}
 
 	}
 
 	// Bind em apenas um parâmetro
-	private function setParam($statment, $key, $value) {
+	private function setParam($statement, $key, $value) {
 
-		$statment -> bindParam($key, $value);
+		$statement -> bindParam($key, $value);
 
 	}
 
